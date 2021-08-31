@@ -1,2 +1,2 @@
 # cs107_Adriana_Trejo-Sheu
-CS 107 Systems Development Github for homework, lectures, and pair programming.
+CS107/AC207 Systems Development for Computational Sciences
