@@ -1,5 +1,7 @@
+
 ## Content 
-- lectures: A series of lecture information
-- homeworks: Holds all my homeworks
-- pair_programming: Pair programming projects
+- lectures: A series of lecture info
+# Playground
+
+A place to play with `git`.
 
