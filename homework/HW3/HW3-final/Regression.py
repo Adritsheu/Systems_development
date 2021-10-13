@@ -83,15 +83,18 @@ class RidgeRegression(LinearRegression):
 
 
     def fit(self, X, y):
-        #need to add bias to X append the ones
+       #need to add bias to X append the ones
+        scale = 1 / np.sqrt(np.sum((X - np.mean(X,axis=0))**2, axis =0))
+        X = X*scale
         bias = np.ones((X.shape[0],1))  #columns of ones length of X
         X = np.hstack((bias, X))
         
         I = np.identity(X.shape[1])
         Gamma = self.alpha * I
+        Gamma[0,0] =0
         betaRR = np.linalg.pinv(X.T @ X + Gamma.T @ Gamma) @ (X.T @ y)
         interceptRR = betaRR[0]
-        coeffRR = betaRR[1:]
+        coeffRR = betaRR[1:] *scale
         self.params["coeff"] = coeffRR
         self.params["intercept"] = interceptRR
         
