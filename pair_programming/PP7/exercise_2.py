@@ -4,7 +4,7 @@ class Forward:
         
     def __pow__(self, other):
         temp = Forward(self.val ** other.val)
-        temp.deriv = r.val * self.val **(r.val - 1)
+        temp.deriv = other.val * self.val **(other.val - 1)
         return temp
         
     def __str__(self):
