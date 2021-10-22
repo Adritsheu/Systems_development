@@ -37,7 +37,7 @@ class AutoDiffToy():
     def __str__(self):
         s = f"Value: {self.val}"
         if hasattr(self, "der"):
-            s += f", Derivative of x: {self.der}"
+            s += f", Derivative of f: {self.der}"
         return s
 
     
