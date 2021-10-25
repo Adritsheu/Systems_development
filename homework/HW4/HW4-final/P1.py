@@ -53,14 +53,15 @@ of h that are too small? What happens for values of h that are too large?\n")
 
 print("Answer to Q-a: The value of h = 1 x 10^-7 is closest to the true derivative.\
  For values of h that are too large the derivative, gets to be inconsistent and you \
-can see that with the purple line. With values of h that  are too small, the \
-derivative value is not similar to the actual derivative.\n")
+can see that with the purple line. With values of h that  are too small, the\
+derivative value is not similar to the actual derivative. These errors in the other\
+h values could be due to rounding and truncation errors.\n")
 
 print("Q-b: How does automatic differentiation address these problems? \n")
 print("Answer to Q-b: To compute a derivative, it can take a lot computing power to solve for the entire curve \
 for a function. Automatic differentiation just looks at one value of x to derive the derivative for \
-the entire function, and can reduce our computing. As seen with the graph, choosing the optimal h size is important for getting \
-the correct derivative. \n")
+the entire function, and can reduce our computing. AD uses the chain rule to evaluate complex derivatives,\
+ and makes our evaluated derivative more precise. As seen with the graph, choosing the optimal h size is important for getting the correct derivative. \n")
 
 plt.figure()
 plt.plot(x,freal,'g--',label = 'True Derivative' )
