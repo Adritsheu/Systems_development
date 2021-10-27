@@ -52,10 +52,9 @@ print("Q-a: Which value of h most closely approximates the true derivative? What
 of h that are too small? What happens for values of h that are too large?\n")
 
 print("Answer to Q-a: The value of h = 1 x 10^-7 is closest to the true derivative.\
- For values of h that are too large the derivative, gets to be inconsistent and you \
-can see that with the purple line. With values of h that  are too small, the\
-derivative value is not similar to the actual derivative. These errors in the other\
-h values could be due to rounding and truncation errors.\n")
+ For values of h that are too small the derivative, gets to be inconsistent and you \
+can see that with the purple line, which can be due to truncation errors. With values of h that  are too small, the\
+derivative value is not similar to the actual derivative, which can come from rounding errors.\n")
 
 print("Q-b: How does automatic differentiation address these problems? \n")
 print("Answer to Q-b: To compute a derivative, it can take a lot computing power to solve for the entire curve \
