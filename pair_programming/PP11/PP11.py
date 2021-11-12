@@ -6,9 +6,10 @@ with open("candidates.txt", 'r') as candidates:
 candidate_list = []
 for i in range(len(lines)):
     words = lines[i].split("|")
+    words[-1] = str(words[-1]).replace("\n", "")
     candidate_list.append(words)
 
-#print(candidate_list)
+
     
     
 db = sqlite3.connect('Candidate.db')
