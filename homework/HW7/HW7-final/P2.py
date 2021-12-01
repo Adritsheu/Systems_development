@@ -104,6 +104,10 @@ reduced_model = LogisticRegression(solver='liblinear')
 reduced_model.fit(X_train_reduced, y_train)
 save_to_database(2, 'Reduced model', db, reduced_model, X_train_reduced, X_test_reduced, y_train, y_test)
 
+penalized_model = LogisticRegression(solver='liblinear', penalty='l1', random_state=87, max_iter=150)
+penalized_model.fit(X_train, y_train)
+save_to_database(3, 'L1 penalty model', db, penalized_model, X_train, X_test, y_train, y_test)
+
 # see data base
 def viz_tables(cols, query):
     q = cursor.execute(query).fetchall()
@@ -130,7 +134,7 @@ val_score = cursor.fetchall()[0][0]
 print("Best validation score:",val_score, '\n')
 
 # Query the coefs
-query = '''SELECT feature_name,value FROM model_coefs WHERE id == 1'''
+query = '''SELECT feature_name,value FROM model_coefs WHERE id == 3'''
 cursor.execute(query)
 print("Coefficient list:",cursor.fetchall(), '\n')
 
@@ -139,7 +143,7 @@ test_model = LogisticRegression(solver='liblinear')
 test_model.fit(X_train, y_train)
 
 # Manually change fit parameters
-query = '''SELECT value FROM model_coefs WHERE id == 1'''
+query = '''SELECT value FROM model_coefs WHERE id == 3'''
 cursor.execute(query)
 coef = cursor.fetchall()
 
